@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="267 个即插即用的 AI 专家角色，覆盖工程、设计、营销、金融、安全、GIS 等 19 个专业部门。">
+  <title>Agency Agents ZH · 267 AI 专家角色库</title>
+  <style>
+    :root{--bg:#07111f;--panel:#0d1b2d;--line:#203650;--text:#edf5ff;--muted:#91a7be;--cyan:#55d6d0;--gold:#ffc76a;--radius:18px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% -10%,#173b52 0,transparent 34rem),var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;min-height:100vh}
+    a{color:inherit}.wrap{width:min(1180px,calc(100% - 32px));margin:auto}.hero{padding:72px 0 38px}.eyebrow{color:var(--cyan);font-size:13px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}.hero h1{font-size:clamp(38px,7vw,78px);line-height:1.02;letter-spacing:-.045em;margin:15px 0 18px;max-width:900px}.hero h1 span{color:var(--gold)}.lead{max-width:760px;color:#b8cada;font-size:clamp(16px,2.2vw,21px);line-height:1.75;margin:0}.stats{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.stat{padding:12px 16px;border:1px solid var(--line);background:#0b1929cc;border-radius:14px}.stat b{font-size:21px;color:var(--cyan);margin-right:6px}.toolbar{position:sticky;top:0;z-index:10;padding:14px 0;background:#07111fe8;backdrop-filter:blur(16px);border-bottom:1px solid #172a40}.search{width:100%;border:1px solid #29445f;background:#0c1a2b;color:white;border-radius:14px;padding:15px 18px;font-size:16px;outline:none}.search:focus{border-color:var(--cyan);box-shadow:0 0 0 3px #55d6d022}.filters{display:flex;gap:8px;overflow:auto;padding:12px 0 2px;scrollbar-width:none}.filters::-webkit-scrollbar{display:none}.filter{white-space:nowrap;border:1px solid var(--line);background:#0d1b2d;color:#b8cada;border-radius:999px;padding:9px 13px;cursor:pointer}.filter.active{background:var(--cyan);border-color:var(--cyan);color:#052326;font-weight:800}
+    main{padding:34px 0 70px}.resultbar{display:flex;justify-content:space-between;align-items:center;color:var(--muted);margin-bottom:22px}.resultbar a{text-decoration:none;color:var(--cyan)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{display:flex;flex-direction:column;min-height:220px;padding:21px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(145deg,#102238dd,#0a1727dd);text-decoration:none;transition:.2s ease}.card:hover{transform:translateY(-3px);border-color:#3d6984;box-shadow:0 16px 44px #0005}.dept{color:var(--cyan);font-size:12px;font-weight:800;letter-spacing:.08em}.card h2{font-size:19px;line-height:1.35;margin:12px 0 10px}.card p{font-size:14px;color:#aebfd0;line-height:1.65;margin:0;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}.meta{margin-top:auto;padding-top:16px;display:flex;justify-content:space-between;gap:10px;color:#6f8ba3;font:12px ui-monospace,SFMono-Regular,Menlo,monospace}.source{color:var(--gold)}.empty{display:none;text-align:center;color:var(--muted);padding:80px 0}.loading{text-align:center;color:var(--muted);padding:70px}.footer{border-top:1px solid var(--line);padding:26px 0 42px;color:#7890a7;font-size:13px}.footer a{color:#a8bfd2}
+    @media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding-top:48px}}
+    @media(max-width:600px){.wrap{width:min(100% - 22px,1180px)}.grid{grid-template-columns:1fr}.hero{padding:38px 0 26px}.card{min-height:195px}.resultbar{font-size:13px}.toolbar{padding-top:10px}}
+  </style>
+</head>
+<body>
+  <header class="hero"><div class="wrap">
+    <div class="eyebrow">Agency Agents 中文版</div>
+    <h1>找到你的 <span>AI 专家</span></h1>
+    <p class="lead">267 个即插即用的专家角色，覆盖 19 个专业部门。搜索需求、筛选领域，点击角色即可查看完整定义。</p>
+    <div class="stats"><div class="stat"><b id="total">267</b>专家角色</div><div class="stat"><b>19</b>专业部门</div><div class="stat"><b>52</b>中国市场原创</div></div>
+  </div></header>
+  <div class="toolbar"><div class="wrap">
+    <input id="search" class="search" type="search" placeholder="搜索角色、技能或描述，例如：小红书、前端、安全…" aria-label="搜索专家角色">
+    <div id="filters" class="filters" aria-label="部门筛选"></div>
+  </div></div>
+  <main class="wrap">
+    <div class="resultbar"><span id="count">正在读取角色目录…</span><a href="AGENT-LIST.md">查看原始完整名单 →</a></div>
+    <div id="grid" class="grid"><div class="loading">正在加载 267 位专家…</div></div>
+    <div id="empty" class="empty">没有找到匹配的专家角色，试试其他关键词。</div>
+  </main>
+  <footer class="footer"><div class="wrap">开源项目 <a href="https://github.com/michoney/agency-agents-zh">michoney/agency-agents-zh</a> · MIT License</div></footer>
+  <script>
+  const deptFolder={
+    '工程部':'engineering','设计部':'design','营销部':'marketing','付费媒体部':'paid-media','销售部':'sales','金融部':'finance','人力资源部':'hr','法务部':'legal','供应链部':'supply-chain','产品部':'product','项目管理部':'project-management','测试部':'testing','支持部':'support','专项部':'specialized','空间计算部':'spatial-computing','游戏开发部':'game-development','学术部':'academic','GIS 部':'gis','安全部':'security'
+  };
+  const state={agents:[],dept:'全部',query:''};
+  const esc=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  function parse(md){
+    let dept=''; const agents=[];
+    for(const raw of md.split('\n')){
+      const h=raw.match(/^## ([^(]+?)(?:\s*\([^)]+\))?\s*$/); if(h){dept=h[1].trim();continue}
+      if(!raw.startsWith('| `'))continue;
+      const cells=raw.split('|').slice(1,-1).map(x=>x.trim()); if(cells.length<4)continue;
+      const id=cells[0].replace(/`/g,''),name=cells[1],desc=cells[2],source=cells[3];
+      const folder=deptFolder[dept]||id.split('-')[0]; agents.push({id,name,desc,source,dept,folder});
+    } return agents;
+  }
+  function filters(){
+    const ds=['全部',...new Set(state.agents.map(a=>a.dept))];
+    document.querySelector('#filters').innerHTML=ds.map(d=>`<button class="filter${d===state.dept?' active':''}" data-dept="${esc(d)}">${esc(d)}</button>`).join('');
+    document.querySelectorAll('.filter').forEach(b=>b.onclick=()=>{state.dept=b.dataset.dept;filters();render()});
+  }
+  function render(){
+    const q=state.query.trim().toLowerCase();
+    const list=state.agents.filter(a=>(state.dept==='全部'||a.dept===state.dept)&&(!q||`${a.id} ${a.name} ${a.desc} ${a.dept}`.toLowerCase().includes(q)));
+    document.querySelector('#count').textContent=`显示 ${list.length} / ${state.agents.length} 位专家`;
+    document.querySelector('#grid').innerHTML=list.map(a=>`<a class="card" href="${encodeURI(a.folder+'/'+a.id+'.md')}"><div class="dept">${esc(a.dept)}</div><h2>${esc(a.name)}</h2><p>${esc(a.desc)}</p><div class="meta"><span>${esc(a.id)}</span><span class="source">${esc(a.source)}</span></div></a>`).join('');
+    document.querySelector('#empty').style.display=list.length?'none':'block';
+  }
+  document.querySelector('#search').addEventListener('input',e=>{state.query=e.target.value;render()});
+  fetch('AGENT-LIST.md').then(r=>{if(!r.ok)throw Error(r.status);return r.text()}).then(md=>{state.agents=parse(md);document.querySelector('#total').textContent=state.agents.length;filters();render()}).catch(()=>{document.querySelector('#grid').innerHTML='<div class="loading">目录加载失败，请刷新页面重试。</div>';document.querySelector('#count').textContent='无法读取目录'});
+  </script>
+</body>
+</html>
