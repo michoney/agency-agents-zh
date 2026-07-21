@@ -57,7 +57,7 @@
     const q=state.query.trim().toLowerCase();
     const list=state.agents.filter(a=>(state.dept==='全部'||a.dept===state.dept)&&(!q||`${a.id} ${a.name} ${a.desc} ${a.dept}`.toLowerCase().includes(q)));
     document.querySelector('#count').textContent=`显示 ${list.length} / ${state.agents.length} 位专家`;
-    document.querySelector('#grid').innerHTML=list.map(a=>`<a class="card" href="${encodeURI(a.folder+'/'+a.id+'.md')}"><div class="dept">${esc(a.dept)}</div><h2>${esc(a.name)}</h2><p>${esc(a.desc)}</p><div class="meta"><span>${esc(a.id)}</span><span class="source">${esc(a.source)}</span></div></a>`).join('');
+    document.querySelector('#grid').innerHTML=list.map(a=>`<a class="card" href="${encodeURI('https://github.com/michoney/agency-agents-zh/blob/main/'+a.folder+'/'+a.id+'.md')}"><div class="dept">${esc(a.dept)}</div><h2>${esc(a.name)}</h2><p>${esc(a.desc)}</p><div class="meta"><span>${esc(a.id)}</span><span class="source">${esc(a.source)}</span></div></a>`).join('');
     document.querySelector('#empty').style.display=list.length?'none':'block';
   }
   document.querySelector('#search').addEventListener('input',e=>{state.query=e.target.value;render()});
